@@ -6,6 +6,8 @@ import AbstractFactory.Factories.SpanishManufacturer;
 import FactoryMethod.HelloUniverseManufacturer;
 import FactoryMethod.HelloWorldManufacturer;
 import Singleton.Singleton;
+import builder.Hello;
+import builder.HelloBuilder;
 
 /**
  *
@@ -33,9 +35,13 @@ public class HolaMundoPatronesCreacionales {
 
         englishPerson.sayHelloUniverse().print();
         englishPerson.sayHelloWorld().print();
-        
+
         spanishPerson.sayHelloUniverse().print();
         spanishPerson.sayHelloWorld().print();
+
+        // Builder --------------------------------------
+        new HelloBuilder("Hola").place("mundo").pattern(" - Patrón builder").build();
+        new HelloBuilder("Hola").place("universo").pattern(" - Patrón builder").build();
 
     }
 }
