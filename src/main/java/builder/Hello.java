@@ -6,9 +6,9 @@ package builder;
  */
 public class Hello {
 
-    private String greeting;
-    private String place;
-    private String pattern;
+    private String greeting = "";
+    private String place = "";
+    private String pattern = "";
 
     public String getGreeting() {
         return greeting;

@@ -42,6 +42,9 @@ public class HolaMundoPatronesCreacionales {
         // Builder --------------------------------------
         new HelloBuilder("Hola").place("mundo").pattern(" - Patrón builder").build();
         new HelloBuilder("Hola").place("universo").pattern(" - Patrón builder").build();
+        
+        // Prototype
+        
 
     }
 }
