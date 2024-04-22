@@ -5,8 +5,8 @@ import AbstractFactory.Factories.Person;
 import AbstractFactory.Factories.SpanishManufacturer;
 import FactoryMethod.HelloUniverseManufacturer;
 import FactoryMethod.HelloWorldManufacturer;
+import Prototype.HelloPrototype;
 import Singleton.Singleton;
-import builder.Hello;
 import builder.HelloBuilder;
 
 /**
@@ -15,7 +15,7 @@ import builder.HelloBuilder;
  */
 public class HolaMundoPatronesCreacionales {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         // Singleton ------------------------------------
 
         Singleton.getInstance().printHelloWorld();
@@ -42,9 +42,16 @@ public class HolaMundoPatronesCreacionales {
         // Builder --------------------------------------
         new HelloBuilder("Hola").place("mundo").pattern(" - Patrón builder").build();
         new HelloBuilder("Hola").place("universo").pattern(" - Patrón builder").build();
-        
-        // Prototype
-        
 
+        // Prototype
+        HelloPrototype helloWorld = new HelloPrototype("Hola", "mundo", "- Patrón prototype");
+        HelloPrototype helloUniverse = helloWorld.clone();
+        helloUniverse.setPlace("universo");
+        HelloPrototype helloGalaxy = helloWorld.clone();
+        helloGalaxy.setPlace("galaxia");
+
+        helloWorld.printHello();
+        helloUniverse.printHello();
+        helloGalaxy.printHello();
     }
 }
